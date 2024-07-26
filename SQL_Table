@@ -1,0 +1,28 @@
+//SQL CODE
+ create schema HMS;
+
+ create table patients(
+ id Int auto_increment primary key,
+ Pname VARCHAR(255) NOT NULL,
+ age int NOT NULL,
+ gender varchar(10)NOT NULL  );
+
+ create table doctors( 
+id INT auto_increment primary key,
+Dname VARCHAR(255) NOT NULL ,
+specilization varchar(255) NOT NULL);
+
+
+ create table appointments( 
+ id INT auto_increment primary key,
+ pid INT NOT NULL ,
+ did INT NOT NULL,
+ appointment DATE NOT NULL ,
+ foreign key(pid)references patients(id),
+ foreign key(did)references doctors(id));
+
+
+  INSERT INTO doctors(Dname ,specilization) values
+  ('shiva' , 'dentist');
+ 
+ insert into appointments values(1,1,1,'2024-02-20');
